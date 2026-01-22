@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hourly Reports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="wrap">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Reports</p>
+          <h1>Hourly Performance</h1>
+          <p class="sub">All hourly reports saved by the bot. Latest entries first.</p>
+        </div>
+        <div class="status-card">
+          <div class="status-row">
+            <span class="label">Updated</span>
+            <span id="updatedAt" class="value">—</span>
+          </div>
+          <div class="status-row">
+            <span class="label">Entries</span>
+            <span id="entryCount" class="value">—</span>
+          </div>
+          <div class="controls">
+            <a class="btn ghost" href="/">Back to Dashboard</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="card log-card">
+        <div class="log-header">
+          <h2>Hourly Reports</h2>
+          <span class="label">Newest to oldest</span>
+        </div>
+        <div id="reportList" class="report-list"></div>
+      </section>
+    </div>
+
+    <script src="/hourly.js"></script>
+  </body>
+</html>

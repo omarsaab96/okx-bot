@@ -1,0 +1,15 @@
+{
+  "dateUtc": "2026-01-06",
+  "startBalance": 5000,
+  "endBalance": 5000,
+  "pnl": 0,
+  "pnlPct": 0,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "winRate": 0,
+  "maxDrawdown": 0,
+  "largestWin": 0,
+  "largestLoss": 0,
+  "cooldownMinutes": 0
+}

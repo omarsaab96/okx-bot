@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OKX Bot Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="wrap">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">OKX Bot Dashboard</p>
+          <h1>Live Control + Trading Pulse</h1>
+          <p class="sub">Monitor strategy signals, risk state, and runtime logs. Start/stop trading without killing the process.</p>
+        </div>
+        <div class="status-card">
+          <div class="status-row">
+            <span class="label">Engine</span>
+            <span id="engineStatus" class="pill">...</span>
+          </div>
+          <div class="status-row">
+            <span class="label">Trading</span>
+            <span id="tradingStatus" class="pill">...</span>
+          </div>
+          <div class="status-row">
+            <span class="label">Market</span>
+            <span id="marketInfo" class="value">...</span>
+          </div>
+          <div class="status-row">
+            <span class="label">Last Tick</span>
+            <span id="lastTick" class="value">...</span>
+          </div>
+          <div class="status-row">
+            <span class="label">OKX Status</span>
+            <span id="okxStatus" class="pill">...</span>
+          </div>
+          <div class="controls">
+            <button id="startBtn" class="btn primary">Start Trading</button>
+            <button id="stopBtn" class="btn ghost">Stop Trading</button>
+            <a class="btn ghost" href="/hourly.html">Hourly Reports</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Strategy Status</h2>
+          <div class="kv">
+            <div>
+              <span class="label">Last Signal</span>
+              <span id="lastSignal" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Reason</span>
+              <span id="lastReason" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Position</span>
+              <span id="positionState" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Risk (Wins/Losses)</span>
+              <span id="riskSummary" class="value">—</span>
+            </div>
+          </div>
+          <div class="mini">
+            <div>
+              <span class="label">PnL Today</span>
+              <span id="pnlToday" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Max Drawdown</span>
+              <span id="maxDrawdown" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Start Balance</span>
+              <span id="startBalance" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Current Balance</span>
+              <span id="currentBalance" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Wallet Balance</span>
+              <span id="walletBalance" class="value">—</span>
+            </div>
+            <div>
+              <span class="label">Trading Budget</span>
+              <span id="budgetBalance" class="value">—</span>
+            </div>
+          </div>
+          <div class="note" id="shortNote"></div>
+        </div>
+
+        <div class="card">
+          <h2>Settings Snapshot</h2>
+          <pre id="configJson" class="code">Loading...</pre>
+        </div>
+      </section>
+
+      <section class="card log-card">
+        <div class="log-header">
+          <h2>Live Log</h2>
+          <span id="logMeta" class="label">—</span>
+        </div>
+        <div id="logStream" class="log-stream"></div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
